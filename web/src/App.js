@@ -1,21 +1,30 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import './global.css'
 import './App.css'
 import './Sidebar.css'
+import './Main.css'
 
 // Componente: bloco isolado de HTML, CSS e JS, o qual não interfere no restante da aplicação.
 // Propriedade: como se fosse os atributos do HTML. Informações que o componente PAI passa para o componente FILHO
 // Estado: Informações mantidas pelo componente (Lembrar: imutabilidade)
-// minuto 59
+// minuto 1:15
 
 function App() {
 
-  const [counter, setCounter] = useState(0);
-
-  function incrementCounter() {
-    setCounter(counter + 1)
-  }
-
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        console.log(position)
+      },
+      (err) => {
+        console.log(err);
+      },
+      {
+        timeout: 30000,
+      }
+    );
+  }, [])
+  
   return (
     <div id="app">
       <aside>
@@ -43,9 +52,54 @@ function App() {
           </div>
           <button type="submit">Salvar</button>
         </form>
-      </aside>
+      </aside>      
       <main>
-
+        <ul>
+          <li className="dev-item">
+            <header>
+              <img src="https://avatars3.githubusercontent.com/u/32261563?s=460&v=4" alt="Carlos Muterle" />
+              <div className="user-info">
+                <strong>Carlos Muterle</strong>
+                <span>ReactJS, Node.js, C#</span>
+              </div>
+            </header>
+            <p>Pai de um filho maravilhoso, casado com uma super mulher, Analista Desenvolvedor, corredor e palmeirense</p>
+            <a href="https://github.com/muterle/">Acessar perfil no Github</a>
+          </li>
+          <li className="dev-item">
+            <header>
+              <img src="https://avatars3.githubusercontent.com/u/32261563?s=460&v=4" alt="Carlos Muterle" />
+              <div className="user-info">
+                <strong>Carlos Muterle</strong>
+                <span>ReactJS, Node.js, C#</span>
+              </div>
+            </header>
+            <p>Pai de um filho maravilhoso, casado com uma super mulher, Analista Desenvolvedor, corredor e palmeirense</p>
+            <a href="https://github.com/muterle/">Acessar perfil no Github</a>
+          </li>
+          <li className="dev-item">
+            <header>
+              <img src="https://avatars3.githubusercontent.com/u/32261563?s=460&v=4" alt="Carlos Muterle" />
+              <div className="user-info">
+                <strong>Carlos Muterle</strong>
+                <span>ReactJS, Node.js, C#</span>
+              </div>
+            </header>
+            <p>Pai de um filho maravilhoso, casado com uma super mulher, Analista Desenvolvedor, corredor e palmeirense</p>
+            <a href="https://github.com/muterle/">Acessar perfil no Github</a>
+          </li>
+          <li className="dev-item">
+            <header>
+              <img src="https://avatars3.githubusercontent.com/u/32261563?s=460&v=4" alt="Carlos Muterle" />
+              <div className="user-info">
+                <strong>Carlos Muterle</strong>
+                <span>ReactJS, Node.js, C#</span>
+              </div>
+            </header>
+            <p>Pai de um filho maravilhoso, casado com uma super mulher, Analista Desenvolvedor, corredor e palmeirense</p>
+            <a href="https://github.com/muterle/">Acessar perfil no Github</a>
+          </li>
+        </ul>
       </main>
     </div>
   );

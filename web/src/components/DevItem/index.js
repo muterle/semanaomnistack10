@@ -4,7 +4,7 @@ import './styles.css';
 
 function DevItem({ dev }) {
     return (
-        <li className="dev-item" key={dev._id}>
+        <li className="dev-item">
             <header>
                 <img src={dev.avatar_url} alt={dev.name} />
                 <div className="user-info">
